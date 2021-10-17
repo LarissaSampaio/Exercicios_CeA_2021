@@ -47,7 +47,7 @@ namespace Exercicios_CeA_2021
                         break;
 
                     case 5:
-                        CalculoPet pet = new CalculoPet();
+                        CalculoPets pet = new CalculoPets();
                         pet.Main();
                         break;
 
