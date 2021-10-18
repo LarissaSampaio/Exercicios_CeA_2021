@@ -10,50 +10,36 @@ namespace Exercicios_CeA_2021
     {
         public void Main()
         {
-            string nome;
-            string tipo;
+            Pet pet = new Pet();
             int gato = 0;
             int cachorro = 0;
             int peixe = 0;
-            bool validacao = true;
 
-            do
+            Console.WriteLine("EXERCÍCIO 5\n");
+            Console.WriteLine("Informar o nome e o tipo (Gato, Cachorro ou Peixe) do seu pet!");
+            for (int i = 1; i < 6; i++)
             {
-                Console.WriteLine("Qual o tipo do seu animal?");
-                Console.WriteLine("(1) Gato");
-                Console.WriteLine("(2) Cachorro");
-                Console.WriteLine("(3) Peixe");
-                Console.WriteLine("(4) SAIR");
-                Console.WriteLine("Tipo: ");
-                tipo = Console.ReadLine();
+                Console.WriteLine("\nQual o nome do seu pet {0}?", i);
+                pet.Nome = Console.ReadLine();
+                Console.WriteLine("\nInforme o tipo do pet: ");
+                pet.Tipo = Console.ReadLine();
 
-                if (tipo == "1")
+                if (pet.Tipo == "Cachorro")
                 {
-                    Console.WriteLine("Qual o nome do seu gato?");
-                    nome = Console.ReadLine();
-                    gato++;
-                }
-                else if (tipo == "2")
-                {
-                    Console.WriteLine("Qual o nome do seu cahorro");
-                    nome = Console.ReadLine();
                     cachorro++;
                 }
-                else if (tipo == "4")
+                else if (pet.Tipo == "Gato")
                 {
-                    validacao = false;
+                    gato++;
                 }
-                else
+                else if ( pet.Tipo == "Peixe")
                 {
-                    Console.WriteLine("Qual o nome do seu peixe?");
-                    nome = Console.ReadLine();
                     peixe++;
                 }
-            } while (validacao);
+            }
 
-
-            Console.WriteLine("Você possui {0} gatos, {1} cachorros e {2} peixes.", gato, cachorro, peixe);
-
+            Console.WriteLine("\nVocê possui {0} cahorro(s), {1} gato(s) e {2} peixe(s).", cachorro, gato, peixe);
+           
         }
     }
 }
